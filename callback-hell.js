@@ -13,7 +13,7 @@ function getUser(userId, callback) {
 // userId를 받아서 2초 후에 게시물 목록을 콜백 함수로 전달합니다.
 function getPosts(userId, callback) {
   setTimeout(function() {
-    // 게시물 객체 배열을 생성합니다.
+    /// 게시물 객체 배열을 생성합니다.
     const posts = [
       { id: 1, title: "Post 1" },
       { id: 2, title: "Post 2" }
