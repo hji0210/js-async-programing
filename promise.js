@@ -35,15 +35,14 @@ if(text =='hello'){
 
 
 
-
-
-
-
-
 myPromise
 .then((result) => {
 console.log('result: ', result)
+return `선물은 : ${result}`
 })
+.then((result) => {
+  console.log('result:', result)
+  })
 .catch((err) => {
 console.log('err:', err)
 })

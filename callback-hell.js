@@ -51,3 +51,4 @@ getUser(1, function(user) {
     });
   });
 });
+//callback-hell은 callback함수가  중첩적으로 사용되서 가독성이 떨어지는 문제를 말함
