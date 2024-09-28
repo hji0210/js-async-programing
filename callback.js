@@ -36,7 +36,7 @@ console.log("실행 완료")
 
 
 //taskAsyncFunction(function() {
-//  console.log("콜백 함수 실행");
+///  console.log("콜백 함수 실행");
 //});
 //function() { ... }은 화살표 함수 () => { ... }를 대신하는 ES5 문법입니다.
 //taskAsyncFunction 함수 호출에 익명 함수를 콜백으로 전달합니다.
