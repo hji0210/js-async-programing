@@ -7,12 +7,13 @@ function getUser(userId) {
     //callback(user)
     resolve(user) //   resolve함수를 통해 user 객체를 넘겨줄 수 있다.
      }catch (error) {
-       
      reject(error)
      }
     },1000)
    });
     }
+
+
     function getPosts(userId) {
       return new Promise((resolve, reject) => {
         setTimeout(function() {
@@ -92,3 +93,15 @@ function getUser(userId) {
    runAsyncAwait().then(user => console.log('user: ', user))
 
    console.log('end')
+
+//Promise 방식
+//then(), catch() 사용
+//여러 개의 then() 연결 시 복잡함
+//catch() 사용
+//비동기 작업이 중첩될 때 복잡함
+
+//Async/Await 방식
+//async와 await 사용
+//더 간단하고 직관적임
+//try/catch 사용
+//코드 흐름이 직관적임
