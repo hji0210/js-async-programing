@@ -82,30 +82,30 @@
 //5)Promise.any()
 //여러 개의 Promise를 동시에 실행하고 그 중에 하나라도 이행하면 해당 Promise의 값을 반환하는 역할을 함
 // promise1은 3초 후에 3000을 이행하는 Promise입니다.
-const promise1 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve(3000); // 3초 후에 3000 반환
-  }, 3000);
-});
+//const promise1 = new Promise((resolve, reject) => {
+ // setTimeout(() => {
+  //  resolve(3000); // 3초 후에 3000 반환
+  //}, 3000);
+//});
 
 // promise2는 0.5초 후에 500을 이행하는 Promise입니다.
-const promise2 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve(500); // 0.5초 후에 500 반환
-  }, 500);
-});
+//const promise2 = new Promise((resolve, reject) => {
+ // setTimeout(() => {
+  //  resolve(500); // 0.5초 후에 500 반환
+  //}, 500);
+//});
 
 // promise3은 1초 후에 1000을 이행하는 Promise입니다.
-const promise3 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve(1000); // 1초 후에 1000 반환
-  }, 1000);
-});
+//const promise3 = new Promise((resolve, reject) => {
+ // setTimeout(() => {
+  //  resolve(1000); // 1초 후에 1000 반환
+  //}, 1000);
+//});
 
 // Promise.any()를 사용하여 가장 빨리 이행된 Promise의 값을 출력합니다.
-Promise.any([promise1, promise2, promise3])
-  .then(console.log) // 가장 빨리 이행된 값 (promise2의 500을 출력)
-  .catch(console.error); // 모든 Promise가 거부된 경우에만 실행
+//Promise.any([promise1, promise2, promise3])
+  //.then(console.log) // 가장 빨리 이행된 값 (promise2의 500을 출력)
+  //.catch(console.error); // 모든 Promise가 거부된 경우에만 실행
 
 
 
@@ -123,10 +123,21 @@ Promise.any([promise1, promise2, promise3])
 //가장 빨리 처리된 promise가 이행이 되든 거부가 되든 그 값을 반환
 //주어진 promise들 중에 가장 빨리 처리된 값이 출력
 //그게 이행되었다면 then에서 출력, 거부가 되었다면 catch에서 출력
+const promise1 = new Promise((resolve) => {
+  setTimeout(() => {
+      resolve('Promise 1');
+  }, 1000);
+});
+const promise2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+      reject('Error from Promise 2');
+  }, 500);
+});
 
-Promise.race([promise1,promise2,promise3])
-.then(console.log)
-.catch(console.error)
+Promise.race([promise1, promise2])
+  .then(console.log) // 'Error from Promise 2' 출력
+  .catch(console.error);
+
 //promise2가 가장 빨리 처리되어서 이행이 되었던 거부가 되었던 이 promise의 거부 이유가 출력이 되는 것
 
 
