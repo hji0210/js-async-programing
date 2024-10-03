@@ -128,3 +128,8 @@ Promise.race([promise1,promise2,promise3])
 .then(console.log)
 .catch(console.error)
 //promise2가 가장 빨리 처리되어서 이행이 되었던 거부가 되었던 이 promise의 거부 이유가 출력이 되는 것
+
+
+
+//Promise.any()는 하나라도 성공해야 하고, 모든 Promise가 실패할 때만 에러를 발생시킵니다.
+//Promise.race()는 가장 먼저 완료된 Promise의 결과를 반환하며, 이행이나 거부에 상관없이 가장 먼저 완료된 것을 기준으로 합니다.
